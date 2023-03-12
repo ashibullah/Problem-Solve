@@ -7,7 +7,7 @@ int main()
     printf("Resources: ");
     scanf("%d",&n);
     int ins[n], pro[m][n], Max[m][n], Av[m][n], need[m][n], count[n];
-    int c = 0, d = 0, ne[m], ave[m], maaax[m], al[m], finish[m];
+    int c = 0, ne[m], ave[m], maaax[m], al[m], finish[m];
     // taking input
     printf("Instances of\n");
     for (int i = 0; i < n; i++)
@@ -67,7 +67,7 @@ int main()
         }
     }
     // converting available storing it in c & instance in c
-    for (int i = 0; i < sizeof(count) / sizeof(count[0]); i++) // av 7 5 3 =753
+    for (int i = 0; i < n; i++) // av 7 5 3 =753
     {
         c = c * 10 + count[i];
     }
