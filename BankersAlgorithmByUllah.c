@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main()
 {
     int m, n;
@@ -98,21 +99,23 @@ int main()
     
 
     int step=0,gant[m];
-    while (step<=m)
+    while (step<m)
     {
         for (int i = 0; i < m; i++)
         {
-            if (ne[i] <= c)
+            if (ne[i] <= c && finish[i]!=1 )
             {
                 c = c + al[i];
                 finish[i] = 1;
                 gant[step]= i+1;
                 step++;
-                
+   
             }
         }
         
     }
+
+    // printf("%d  ", step);
     puts("Process Schedule Gant Chart");
     for (int i = 0; i < m; i++)
         {
@@ -124,12 +127,34 @@ int main()
             printf("[ %d ]", finish[i]);
         }
         getchar();
-    //     puts("");
-    // for (int i = 0; i < 5; i++)
-    //     {
-    //         printf("%d ", ne[i]);
-    //     }
-    /* int finished = 0;
+   
+    return 0;
+}
+    /*
+        Inputs
+        0 1 0
+        2 0 0
+        3 0 2
+        2 1 1
+        0 0 2
+
+        7 5 3
+        3 2 2
+        9 0 2
+        2 2 2
+        4 3 3
+
+        3 3 2
+    */
+     puts("");
+   
+    /*
+    for (int i = 0; i < 5; i++)
+         {
+             printf("%d ", ne[i]);
+        }
+    
+    int finished = 0;
     while (finished < m)
     {
         // try to find a process that can be finished
@@ -160,7 +185,7 @@ int main()
                 }
             }
         }
-        // if no process can be finished, then we are in an unsafe state
+       
         if (!found)
         {
             printf("Unsafe state detected\n");
@@ -188,6 +213,3 @@ int main()
         }
     }
     */
-
-    return 0;
-}
